@@ -32,7 +32,12 @@ export FLASK_DEBUG=true
 
 To use this license server with Bruno:
 
-1. Start the server
+#### Option 1: Use the Public Demo Server
+- **URL**: `https://brunoserver-k4vf.onrender.com`
+- ⚠️ **Note**: This server may be inactive due to Render's free tier spin-down after 15 minutes of inactivity. First request may take 30-60 seconds to wake up.
+
+#### Option 2: Run Your Own Server
+1. Start the server locally
 2. In Bruno, configure the license server URL to point to your local server:
    - Default: `http://127.0.0.1:5000`
 3. Use any license key for activation and any otp for verification.
