@@ -110,7 +110,7 @@ def verify_license():
     response = {
         "verified": True,
         "subscription": {
-            "plan": "GOLDEN_EDITION"
+            "plan": "ULTIMATE_EDITION"
         }
     }
 
