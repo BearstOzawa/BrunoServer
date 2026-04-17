@@ -317,6 +317,58 @@ def capabilities_v2():
     ), 200
 
 
+@app.route("/", methods=["GET"])
+def index():
+    return """
+<!doctype html>
+<html lang=\"zh-CN\">
+  <head>
+    <meta charset=\"utf-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+    <title>Bruno 激活服务</title>
+    <style>
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0a1324;
+        color: #f6f8ff;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(32px, 6vw, 56px);
+        font-weight: 800;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bruno 激活服务</h1>
+  </body>
+</html>
+""", 200, {"Content-Type": "text/html; charset=utf-8"}
+
+
+@app.route("/healthz", methods=["GET"])
+def healthz():
+    return jsonify(
+        {
+            "status": "ok",
+            "service": "bruno-license-server",
+            "version": "v2-compat",
+            "routes": {
+                "capabilities": "/api/v2/capabilities",
+                "subscription": "/api/v2/subscription",
+            },
+        }
+    ), 200
+
+
 def create_app():
     return app
 

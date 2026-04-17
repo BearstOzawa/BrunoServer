@@ -36,6 +36,8 @@ Run the server with default settings (`127.0.0.1:5000`):
 python server.py
 ```
 
+When deployed, you can also open the root path `/` to see a simple status page and use `/healthz` for machine-readable health checks.
+
 Configure the server using environment variables:
 
 ```bash
@@ -45,6 +47,11 @@ export FLASK_DEBUG=true
 ```
 
 ## Supported Endpoints
+
+### Utility
+
+- `GET /`
+- `GET /healthz`
 
 ### v1
 
